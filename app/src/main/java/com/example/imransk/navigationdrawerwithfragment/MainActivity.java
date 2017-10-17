@@ -94,10 +94,14 @@ public class MainActivity extends AppCompatActivity
             fragment = new ImportFragment();
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            TextView textView = (TextView) findViewById(R.id.maintext);
+            textView.setVisibility(textView.GONE);
             fragment = new GalleryFragment();
 
         } else if (id == R.id.nav_slideshow) {
-
+            TextView textView = (TextView) findViewById(R.id.maintext);
+            textView.setVisibility(textView.GONE);
+            fragment = new SlideShowFragment();
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
