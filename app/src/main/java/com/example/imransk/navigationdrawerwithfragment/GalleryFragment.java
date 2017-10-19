@@ -14,7 +14,8 @@ import android.widget.ListView;
  */
 
 public class GalleryFragment extends Fragment {
-    Context mycontext;
+    ListView listView;
+    Context myContext;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,6 +31,12 @@ public class GalleryFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        myContext = getActivity().getApplication();
+        listView = view.findViewById(R.id.listitemofimport);
+        String[] heading = {"Hello", "Ami", "Tumi"};
+        String[] discription = {"hello discription", "ami discription", "Tumi discription"};
+        int[] images = {R.drawable.imran,R.drawable.imran,R.drawable.imran};
+        CoustomAdapter coustomAdapter = new CoustomAdapter(myContext.getApplicationContext(), heading, discription, images);
+        listView.setAdapter(coustomAdapter);
     }
 }
