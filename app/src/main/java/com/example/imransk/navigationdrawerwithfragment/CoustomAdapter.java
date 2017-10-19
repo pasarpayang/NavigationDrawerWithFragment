@@ -42,15 +42,17 @@ class CoustomAdapter extends BaseAdapter {
     public long getItemId(int i) {
         return 0;
     }
-public class MyHolder{
+
+    public class MyHolder {
         ImageView imageView;
-    TextView tv1,tv2;
+        TextView tv1, tv2;
     }
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
         MyHolder myHolderObj = new MyHolder();
-        view=inflater.inflate(R.layout.importlist,null);
+        view = inflater.inflate(R.layout.importlist, null);
 
         myHolderObj.imageView = view.findViewById(R.id.customimage);
         myHolderObj.imageView.setImageResource(images[i]);
@@ -60,7 +62,6 @@ public class MyHolder{
 
         myHolderObj.tv2 = view.findViewById(R.id.ctv2);
         myHolderObj.tv2.setText(discription[i]);
-
 //        view.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -68,6 +69,5 @@ public class MyHolder{
 //            }
 //        });
         return view;
-
     }
 }
